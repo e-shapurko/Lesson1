@@ -1,7 +1,7 @@
 #include "lib.h"
 #include "version.h"
 
-int Version()
+int version()
 {
 	return PROJECT_VERSION_PATCH;
 }
