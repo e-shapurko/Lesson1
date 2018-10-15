@@ -4,10 +4,9 @@
 
 int main ()
 {
-	printf("build %d", version());
-	printf("Hello, World!");
-	auto logger = spdlog::stdout_logger_mt("console");
-	logger->info("version {} was started", version());
+
+	std::cout << "build " << version() << std::endl;
+	std::cout << "Hello, World! " << version() << std::endl;
 
 	return 0;
 }
