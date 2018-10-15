@@ -6,13 +6,13 @@ find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
 configure_file(version.h.in ${PROJECT_SOURCE_DIR}/version.h)
 
-add_executable(heflloworld_cli main.cpp)
+add_executable(helloworld main.cpp)
 
 add_library(helloworld_lib lib.cpp)
 
 add_executable(test_version test_version.cpp)
 
-set_target_properties(heflloworld_cli helloworld_lib test_version PROPERTIES
+set_target_properties(helloworld helloworld_lib test_version PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
     COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
@@ -23,7 +23,7 @@ set_target_properties(test_version PROPERTIES
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 ) 
 
-target_link_libraries(heflloworld_cli
+target_link_libraries(helloworld
     helloworld_lib
 )
 
@@ -32,7 +32,7 @@ target_link_libraries(test_version
     helloworld_lib
 )
 
-install(TARGETS heflloworld_cli RUNTIME DESTINATION bin)
+install(TARGETS helloworld RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
